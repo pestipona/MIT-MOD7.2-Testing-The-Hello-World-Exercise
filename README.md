@@ -66,13 +66,13 @@ And if we **take a look** at the ```hello.js``` file, you'll see that it's a **s
 
 ![](./ScreenShots/Hello_JS.png)
 
-And if **we look at** our ```test```, **you can see** that the ```tests``` in this part here says, ```expect(hello( )).toBe("Hello World!");```. Now, this part, the ```hello.test.js``` file, **is part of** just a **testing framework** for **JavaScript** that we're using for **our code**. And you can see here also that there are **some other utilities**. We have something called ```course-utilities``` that **loads the code** that you then **reference here** on ```load``` and then **gives you access** to **those objects** or **those functions** within this **environment**.
+And if **we look at** our ```test```, **you can see** that the ```tests``` in this part here says, ```expect(hello( )).toBe("Hello World!");```. Now, this part, the ```hello.test.js``` file, is part of ```jest``` a **testing framework** for **JavaScript** that we're using for **our code**. And you can see here also that there are **some other utilities**. We have something called ```course-utilities``` that **loads the code** that you then **reference here** on ```load``` and then **gives you access** to **those objects** or **those functions** within this **environment**.
 
 ![](./ScreenShots/Hello_Test_JS.png)
 
-And so, you can see there that there is some language to learn when it comes to testing, but for now, let's go ahead and simply modify the code so that it's expecting to have ' "Hello World!" '. And if I remove the exclamation point there, saved it.
+And so, you can see there that there is **some language** to **learn** when it comes to **testing**, but for now, let's go ahead and simply **modify the code** so that it's **expecting** to have ```"Hello World!"```. And if I remove the **exclamation point** here, and saved it.
 
-And then I'm going to go ahead and rerun the tests. You'll see that we get something different. You can see there that something failed. And if we scroll back up, you'll see here that it said expected ' "Hello World!" ' with an exclamation point, and we received ' "Hello World" ' without it. And so, it gives you there a good amount of information. In this case, we had a single task, and that was, that meant that the entire test failed.
+And then I'm going to go ahead and **rerun the tests**. You'll see that we **get something different**. You can see there that **something failed**. And if we scroll back up, you'll see here that it said expected ' "Hello World!" ' with an exclamation point, and we received ' "Hello World" ' without it. And so, it gives you there a good amount of information. In this case, we had a single task, and that was, that meant that the entire test failed.
 
 ![](./ScreenShots/Test_Fail.png)
 
@@ -81,3 +81,37 @@ Normally, you had many more. So, I'm going to go ahead and add that exclamation 
 ![](./ScreenShots/Test_Pass.png)
 
 So, this is a minimal, a minimal test, a "Hello World!", where you are cloning, and you are checking to see that you have everything in place to be able to run the tests that you will use throughout the course.
+
+## II. Actual Output in WebStorm:
+
+When Test Fails can click comparison
+
+![](ScreenShots/NPM_Test_Fail.png)
+
+Change back to exclamation, and Test Passes
+
+![](ScreenShots/NPM_Test_Pass.png)
+
+## III. Troubleshooting in WebStorm:
+
+Need to use run button, doesn't work for some reason on terminal. But need to configure first as shown below.
+
+![](ScreenShots/NPM_Config.png)
+
+Run ```npm install``` first.
+
+Then run the following command ```npm test``` in the ```terminal``` but got the following error message. After spending 3 hours figuring out the only solution was to create a run config and run the test through the "green run button" and configuring it as shown above. 
+
+![](ScreenShots/NPM_error_1.png)
+
+![](ScreenShots/NPM_error_2.png)
+
+What fixed the ```error: 'no ts-node'``` error message after running the pre config commands above was running this command in the ```terminal```.
+
+```shell
+npm install ts-node
+```
+
+as seen below
+
+![](ScreenShots/NPM_Config1.png)
